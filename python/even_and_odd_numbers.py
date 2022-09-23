@@ -6,6 +6,6 @@ num은 int 범위의 정수입니다.
 """
 
 def solution(num):
-    return "Odd" if num & 1 else "Even"
+    return "Even" if num % 2 == 0 else "Odd" 
 
 print(solution(3))
