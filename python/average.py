@@ -6,10 +6,5 @@ arr의 원소는 -10,000 이상 10,000 이하인 정수입니다.
 """
 
 def solution(arr):
-    sum_result = 0
-    for i in range(len(arr)):
-        sum_result += arr[i]
-    return sum_result / len(arr)
-
-arr = [1,2,3,4]
-print(solution(arr))
+    result = sum(arr)/len(arr)
+    return result
