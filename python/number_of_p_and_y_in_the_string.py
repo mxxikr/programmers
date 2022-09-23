@@ -13,16 +13,6 @@ s에 'p'의 개수와 'y'의 개수를 비교해 같으면 True, 다르면 False
 'p'의 개수 1개, 'y'의 개수 2개로 다르므로 false를 return 합니다.
 """
 
-import re
-
 def solution(s):
-    check_p = 0
-    check_y = 0
-
-    for i in re.finditer("p", s.lower()):
-        check_p += 1
-    
-    for i in re.finditer("y", s.lower()):
-        check_y += 1
-
-    return True if check_p == check_y else False
+    return True if s.lower().count("p") == s.lower().count("y") else False
+    # count() : 문자열에서 주어진 요소의 총 개수 반환하는 내장 함수
