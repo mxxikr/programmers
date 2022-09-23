@@ -8,8 +8,4 @@ N의 범위 : 100,000,000 이하의 자연수
 """
 
 def solution(n):
-    n = str(n)
-    s = []
-    for i in range(len(n)):
-        s.append(int(n[i:i+1]))
-    return sum(s)
+    return sum(int(i) for i in str(n))
