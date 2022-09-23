@@ -8,9 +8,4 @@ n은 0 이상 3000이하인 정수입니다.
 """
 
 def solution(n):
-    result = 0
-    for i in range(n):
-        i += 1
-        if n % i == 0:
-           result += i
-    return result
+    return sum([i for i in range(1, n+1) if n % i == 0])
