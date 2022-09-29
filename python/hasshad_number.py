@@ -7,10 +7,9 @@ x는 1 이상, 10000 이하인 정수입니다.
 """
 
 def solution(x):
-    check_num = str(x)
-    check = 0
-    for i in range(len(check_num)):
-        check += int(check_num[i])
-    return True if x % check == 0 else False
-
-print(solution(13))
+    check_h = str(x)
+    sum_int = 0
+    for i in range(len(check_h)):
+        sum_int += int(check_h[i])
+    
+    return True if (x % sum_int) == 0 else False
