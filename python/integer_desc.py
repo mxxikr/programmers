@@ -7,15 +7,10 @@ n은 1이상 8000000000 이하인 자연수입니다.
 """
 
 def solution(n):
-    answer = ""
-    tmp = []
-    for i in range(len(str(n))):
-        tmp.append(str(n)[i])
-
-    for n in range(len(tmp)):
-        answer += str(max(tmp))
-        tmp.remove(max(tmp))
-
-    return int(answer)
+    result = ""
+    for i in sorted(str(n), reverse=True): # 내림차순 정렬
+        result += i
+    
+    return int(result)
 
 solution(118372)
