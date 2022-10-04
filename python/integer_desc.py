@@ -7,10 +7,9 @@ n은 1이상 8000000000 이하인 자연수입니다.
 """
 
 def solution(n):
-    result = ""
-    for i in sorted(str(n), reverse=True): # 내림차순 정렬
-        result += i
+    tmp = list(str(n))
+    tmp.sort(reverse=True) # 기존 리스트 내림차순 정렬
     
-    return int(result)
+    return int("".join(tmp)) # 리스트 문자열 변환 후 정수 변환
 
 solution(118372)
