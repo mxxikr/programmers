@@ -9,11 +9,6 @@ n을 x로 나눈 나머지가 1이 되도록 하는 가장 작은 자연수 x를
 12를 11로 나눈 나머지가 1이고, 11보다 작은 자연수 중에서 문제의 조건을 만족하는 수가 없으므로, 11을 return 해야 합니다.
 """
 def solution(n):
-    answer = []
-    for i in range(n):
-        if n % (i+1) == 1:
-            answer.append(i+1)
-
-    return min(answer)
+    return [i for i in range(1, n+1) if n%i==1][0]
             
 solution(10)
