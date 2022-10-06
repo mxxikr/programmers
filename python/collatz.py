@@ -17,16 +17,15 @@
 def solution(n):
     count = 0
     while n != 1:
-        if count >= 500:
-            count = -1
-            break
         if n % 2 == 0: # 짝수일 경우
             n = n / 2
-            count += 1
-            continue
         else: # 홀수일 경우
             n = n * 3 + 1
             count += 1
-            continue
+        count += 1
+
+        if count >= 500:
+            count  = -1
+            break
 
     return count
