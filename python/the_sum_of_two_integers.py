@@ -8,11 +8,6 @@ a와 b의 대소관계는 정해져있지 않습니다.
 """
 
 def solution(a, b):
-    answer = 0
+    if a > b: a, b = b, a
 
-    if a == b: return a
-
-    for i in range(min(a, b), max(a, b)+1):
-        answer += i
-        
-    return answer
+    return sum(range(a, b+1))
