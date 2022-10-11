@@ -8,8 +8,5 @@ arr은 길이 1 이상인 배열입니다.
 """
 
 def solution(arr):
-    if len(arr) > 1:
-        arr.remove(min(arr))
-    else: 
-        return [-1]
+    arr.pop(arr.index(min(arr)))
     return arr
