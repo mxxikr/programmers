@@ -5,9 +5,13 @@
 
 s는 길이 4 이상, 20이하인 문자열입니다.
 """
-phone_number = "01034345555"
 
 def solution(phone_number):
-    return "*" * (len(phone_number) - 4) + phone_number[-4:]
+    answer = ""
+    for i in range(len(phone_number)):
+        if i < len(phone_number) - 4:
+            answer += phone_number.replace(phone_number[i],"*")[i]
+        else:
+            answer += phone_number[i]
 
-print(solution(phone_number))
+    return answer
