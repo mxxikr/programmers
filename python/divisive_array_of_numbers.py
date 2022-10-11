@@ -18,4 +18,5 @@ arr의 모든 원소는 1으로 나누어 떨어집니다.
 """
 
 def solution(arr, divisor):
-    return sorted([n for n in arr if n % divisor == 0]) or [-1]
+    arr = sorted([n for n in arr if n % divisor == 0])
+    return arr if len(arr) != 0 else [-1]
