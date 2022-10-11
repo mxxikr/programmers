@@ -18,13 +18,4 @@ arr의 모든 원소는 1으로 나누어 떨어집니다.
 """
 
 def solution(arr, divisor):
-    answer = []
-    for i in arr:
-        if i % divisor == 0:
-            answer.append(i)
-    
-    if len(answer) == 0:
-        answer.append(-1)
-
-    answer.sort()
-    return answer
+    return sorted([n for n in arr if n % divisor == 0]) or [-1]
