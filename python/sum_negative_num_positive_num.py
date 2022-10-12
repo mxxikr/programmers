@@ -17,10 +17,9 @@ signs가 [false,false,true] 이므로, 실제 수들의 값은 각각 -1, -2, 3�
 
 def solution(absolutes, signs):
     answer = 0
-    for i in range(len(absolutes)):
-        if signs[i] == True:
-            answer += absolutes[i] * 1
+    for absolutes, signs in zip(absolutes, signs):
+        if signs:
+            answer += absolutes
         else:
-            answer += absolutes[i] * -1
-        
+            answer += -absolutes
     return answer
