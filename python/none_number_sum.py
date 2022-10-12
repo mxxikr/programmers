@@ -13,5 +13,5 @@ numbers의 모든 원소는 서로 다릅니다.
 1, 2, 3이 numbers에 없으므로, 1 + 2 + 3 = 6을 return 해야 합니다.
 """
 
-def solution(numbers):
-    return 45 - sum(numbers)
+def solution(numbers): 
+    return sum(range(10)) - sum(numbers)
