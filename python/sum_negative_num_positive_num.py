@@ -16,10 +16,4 @@ signs가 [false,false,true] 이므로, 실제 수들의 값은 각각 -1, -2, 3�
 """
 
 def solution(absolutes, signs):
-    answer = 0
-    for absolutes, signs in zip(absolutes, signs):
-        if signs:
-            answer += absolutes
-        else:
-            answer += -absolutes
-    return answer
+    return sum(absolutes if signs else -absolutes for absolutes, signs in zip(absolutes, signs))
