@@ -14,5 +14,4 @@ numbers의 모든 원소는 서로 다릅니다.
 """
 
 def solution(numbers):
-    check = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-    return sum(list(set(check) - set(numbers)))
+    return 45 - sum(numbers)
