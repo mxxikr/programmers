@@ -9,7 +9,4 @@ s는 길이가 1 이상, 100이하인 스트링입니다.
 """
 
 def solution(s):
-    if len(s) % 2:
-        return s[len(s)//2]
-    else:
-        return s[len(s) // 2 - 1: len(s) // 2 + 1]
+    return s[(len(s)-1)//2:len(s)//2+1]
