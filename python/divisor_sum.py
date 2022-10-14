@@ -15,17 +15,14 @@ def solution(left, right):
     answer = 0
 
     for n in range(left, right+1):
-        tmp = []
-        
-        for i in range(1, int(n**(1/2)) + 1):
-            if (n % i == 0):
-                tmp.append(i) 
-                if ( (i**2) != n) : 
-                    tmp.append(n // i)
-            
-        if len(tmp) % 2 == 0:
-            answer += n
-        else:
+  
+        if int(n**0.5) == n**0.5: # 약수가 홀수개인 모든 수는 제곱수
             answer -= n
+        else:
+            answer += n
 
     return answer
+
+# 제곱수의 성질
+## 제곱수의 약수의 갯수는 항상 홀수
+## 제곱수 를 제외한 모든 정수들의 약수의 개수는 무조건 짝수
