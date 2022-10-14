@@ -6,4 +6,4 @@
 """
 
 def solution(arr1, arr2):
-    return [[arr11 + arr22 for arr11, arr22 in zip(arr1, arr2)] for arr1, arr2 in zip(arr1, arr2)]
+    return [list(map(sum, zip(*x))) for x in zip(arr1, arr2)]
