@@ -6,12 +6,4 @@
 """
 
 def solution(arr1, arr2):
-    answer  = []
-
-    for arr1, arr2 in zip(arr1, arr2):
-        tmp = []
-        for arr11, arr22 in zip(arr1, arr2):
-            tmp +=[arr11 + arr22]
-        answer.append(tmp)
-
-    return answer
+    return [[arr11 + arr22 for arr11, arr22 in zip(arr1, arr2)] for arr1, arr2 in zip(arr1, arr2)]
