@@ -5,11 +5,13 @@
 행렬 arr1, arr2의 행과 열의 길이는 500을 넘지 않습니다.
 """
 
-arr1 = [[1],[2]]
-arr2 = [[3],[4]]
-
 def solution(arr1, arr2):
-    answer = [[arr1_aa + arr2_aa for arr1_aa, arr2_aa in zip(arr1_a, arr2_a)] for arr1_a, arr2_a in zip(arr1, arr2)]
-    return answer
+    answer  = []
 
-print(solution(arr1, arr2))
+    for arr1, arr2 in zip(arr1, arr2):
+        tmp = []
+        for arr11, arr22 in zip(arr1, arr2):
+            tmp +=[arr11 + arr22]
+        answer.append(tmp)
+
+    return answer
