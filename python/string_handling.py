@@ -9,12 +9,6 @@ s는 영문 알파벳 대소문자 또는 0부터 9까지 숫자로 이루어져
 "1234" -> true
 """
 
-def solution(s):
-    if len(s) == 4 or len(s) == 6:
-        try:
-            int(s)
-            return True
-        except Exception as e:
-            return False
-        
-    return False
+def solution(s):        
+    return s.isdigit() and len(s) in (4, 6)
+    # isdigit() 문자열이 숫자로 구성되어있는지 판별해주는 함수 (음수, 소수점일 경우 Fasle 반환)
