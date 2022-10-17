@@ -13,8 +13,6 @@
 총 필요한 놀이기구의 이용 금액은 30 (= 3+6+9+12) 이 되어 10만큼 부족하므로 10을 return 합니다.
 """
 def solution(price, money, count):
-    answer = 0
-    for i in range(1, count+1):
-        answer += price * i
+    answer = sum([price * i for i in range(1, count+1)])
 
     return answer - money if money < answer else 0
