@@ -5,22 +5,24 @@
 
 두 수는 1이상 1000000이하의 자연수입니다.
 """
-
 def solution(n, m):
-    n_list = []
-    m_list = []
-    for i in range(1, n+1):
-        if n % i == 0:
-            n_list.append(i)
-    for i in range(1, m+1):
-        if m % i == 0:
-            m_list.append(i)
-    gcd_list = []
-    for i in n_list:
-        if i in m_list:
-            gcd_list.append(i)
-    gcd = max(gcd_list)
-    lcm = int(n*m//gcd)
-    return [gcd, lcm]
+    answer = []
 
-print(solution(3, 12))
+    # 최대 공약수
+    for i in range(min(n, m), 0, -1):
+        if n % i == 0 and m % i == 0:
+            answer.append(i)
+            break
+
+    # 최소 공배수
+    for i in range(max(n, m), n*m+1):
+        if i % n == 0 and i % m == 0:
+            answer.append(i)
+            break
+    return answer
+
+# 최대 공약수
+## 두 수 이상의 여러 수의 공약수 중 최대인 수
+
+# 최소 공배수
+## 두 수 이상의 여러 수의 공배수 중 최소인 수
