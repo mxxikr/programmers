@@ -12,5 +12,13 @@
 이용금액이 3인 놀이기구를 4번 타고 싶은 고객이 현재 가진 금액이 20이라면, 
 총 필요한 놀이기구의 이용 금액은 30 (= 3+6+9+12) 이 되어 10만큼 부족하므로 10을 return 합니다.
 """
+from cgi import print_exception
+
+
 def solution(price, money, count):
-    return abs(min(money - sum([price * i for i in range(1, count + 1)]),0))
+    return max(0, price * (count**2) + count / 2 - money)
+
+    # 등차수열(공차가 일정한 수열)의 합 공식 이용
+    ## 등차수열을 이루는 모든 항의 개수 : count 
+    ## 첫항과 끝항 : price, price * count
+    ## 등차수열의 합 : count * (price + price * count) / 2
