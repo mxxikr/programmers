@@ -7,8 +7,6 @@
 """
 
 def solution(n, m):
-    a, b = max(n, m), min(n, m) 
-    while (b != 0): 
-        a, b = b, a % b
-        
-    return [a, n * m // a]
+    gcd = lambda a, b : b if not a % b else gcd(b, a % b) # a를 b로 나눈 수가 0일 경우 b 가 최대 공약수
+    lcm = lambda a, b : a * b // gcd(a,b) # 두 수를 곱한 값을 최대 공약수로 나눈 수 = 최소 공배수
+    return [gcd(n, m), lcm(n, m)]
