@@ -5,11 +5,10 @@
 
 두 수는 1이상 1000000이하의 자연수입니다.
 """
-from math import gcd
 
 def solution(n, m):
-    # 최대 공약수
-    g = gcd(n, m)
-    # 최소 공배수
-    l = n * m // g
-    return [g, l]
+    a, b = max(n, m), min(n, m) 
+    while (b != 0): 
+        a, b = b, a % b
+        
+    return [a, n * m // a]
