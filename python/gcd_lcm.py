@@ -5,24 +5,11 @@
 
 두 수는 1이상 1000000이하의 자연수입니다.
 """
+from math import gcd
+
 def solution(n, m):
-    answer = []
-
     # 최대 공약수
-    for i in range(min(n, m), 0, -1):
-        if n % i == 0 and m % i == 0:
-            answer.append(i)
-            break
-
+    g = gcd(n, m)
     # 최소 공배수
-    for i in range(max(n, m), n*m+1):
-        if i % n == 0 and i % m == 0:
-            answer.append(i)
-            break
-    return answer
-
-# 최대 공약수
-## 두 수 이상의 여러 수의 공약수 중 최대인 수
-
-# 최소 공배수
-## 두 수 이상의 여러 수의 공배수 중 최소인 수
+    l = n * m // g
+    return [g, l]
