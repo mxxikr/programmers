@@ -12,8 +12,8 @@ arr = [4, 4, 4, 3, 3] 이면 [4, 3] 을 return 합니다.
 배열 arr의 원소의 크기 : 0보다 크거나 같고 9보다 작거나 같은 정수
 """
 def solution(arr):
-    answer = [arr[0]]
-    for i in range(1, len(arr)):
-        if answer[len(answer)-1] != arr[i]: # 첫번째와 두번째 값 비교해서 다를 경우만 리스트 추가
-            answer.append(arr[i])
+    answer = []
+    for i in arr:
+        if answer[-1:] != [i]: # 결과 리스트 끝 값과 arr 요소 비교 후 값이 다르면 결과 리스트 추가
+            answer.append(i)
     return answer
