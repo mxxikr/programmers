@@ -16,15 +16,11 @@ n (3진법) = 11122
 """
 def solution(n):
     tmp = ''
-    answer = 0
+
     while n >= 3:
         if n // 3 != 0:
             tmp += str(n % 3)
             n = n // 3
     tmp += str(n) # 3진법 변환한 수를 뒤집은 수
     
-    # 10진법 변환
-    for i in range(1, len(tmp)+1):
-        answer += int(tmp[i-1]) * int(3**(len(tmp)-i))
-    
-    return answer
+    return int(tmp, 3) # 10진법 변환
